@@ -1,10 +1,15 @@
 // IMPORTS
 const express = require('express')
 const app = express()
+const methodOverride = require('method-override')
 
 require('dotenv').config()
 
 const PORT = process.env.PORT || 3000
+
+// MIDDLEWARE
+app.use(express.urlencoded({extended: true}))
+app.use(methodOverride('_method'))
 
 // setup database 
 const mongoose = require('mongoose')
@@ -23,6 +28,7 @@ app.get('/', (req, res) => {
    res.send('Hello world!')
 })
 
+// LISTENER
 app.listen(PORT, () => {
     console.log(`Server is listening on PORT: ${PORT}`)
 })
