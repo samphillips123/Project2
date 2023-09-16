@@ -1,11 +1,15 @@
 const Projects =  require('./models/projects')
 const mongoose = require('mongoose')
 
-// const mongoURI = 
-// const db = mongoose.connection
+// .ENV ACCESS
+require('dotenv').config()
+
+// const mongoURI = process.env.MONGO_URI
+const mongoURI = "mongodb://127.0.0.1:27017/track_my_projects"
+const db = mongoose.connection
 
 // CONNECTION TO DB
-// mongoose.connect(mongoURI)
+mongoose.connect(mongoURI)
 
 Projects.create({
     projectName: 'Livingroom Renovation',
@@ -37,7 +41,7 @@ Projects.create({
             materialName: 'Electric Fireplace Insert',
             store: 'https://www.electricfireplacesdirect.com/',
             estCost: 839,
-            materialImg: './imgs',
+            materialImg: './imgs/fireplace.jpeg',
             materialNotes: 'Electric fireplace to replace old wood burning fireplace.',
             materialComplete: false
         }
@@ -51,12 +55,12 @@ Projects.create({
     budget: 10000,
     estCostTtl: 7500,
     actCostTtl: 0,
-    projectImg: String,
+    projectImg: './imgs/bmw_wagon_project.jpeg',
     materials: [{
             materialName: 'E30 BMW 3 Series Touring',
             store: 'TBD',
             estCost: 5000,
-            materialImg: 'String',
+            materialImg: './imgs/bmw_e30_touring.jpeg',
             materialNotes: 'Need to have Richard help finding good condition wagon in Germany with his friend.',
             materialComplete: false
         },
@@ -68,5 +72,8 @@ Projects.create({
             materialComplete: false
         }
     ]
-}
-)
+}).then((projects) => {
+    console.log(projects)
+    db.close()
+})
+
