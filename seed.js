@@ -1,7 +1,7 @@
 const Projects =  require('./models/projects')
 const mongoose = require('mongoose')
 
-const mongoURI = 'mongodb+srv://sphillips123:nzTcZ*03AYJ&!JBe@mongodb.ql3bzyv.mongodb.net/?retryWrites=true&w=majority'
+// const mongoURI = 
 const db = mongoose.connection
 
 // CONNECTION TO DB
@@ -30,7 +30,6 @@ Projects.create({
             materialName: 'Drywall',
             store: 'Lowes',
             estCost: 500,
-            materialImg: 'String',
             materialNotes: 'Standard sheetrock',
             materialComplete: false
         },
