@@ -72,6 +72,18 @@ router.post('/', async (req, res) => {
 // POST MATERIAL ROUTE -- "create" new material
 
 // PUT PROJECT ROUTE -- "update" existing project
+router.put('/:id', async (req, res) => {
+    // console.log(req.params.id)
+    try {
+        // set 'on/off' of checkbox to be boolean to match schema
+        req.body.projectComplete === 'on' ? req.body.projectComplete = true : req.body.projectComplete = false
+        const updatedProject = await Projects.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        res.redirect(`/projects/${updatedProject.id}`)
+    } catch (err) {
+        console.log(err)
+        res.status(500).send(err)
+    }
+})
 
 // PUT MATERIAL ROUTE -- "update" existing material
 
