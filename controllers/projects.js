@@ -88,6 +88,9 @@ router.put('/:id', async (req, res) => {
 // PUT MATERIAL ROUTE -- "update" existing material
 
 // DESTROY PROJECT ROUTE -- "delete" existing project
+router.delete('/:id', (req, res) => {
+    console.log(req.params.id)
+})
 
 // DESTROY MATERIAL ROUTE -- "delete" existing material
 
