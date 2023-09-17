@@ -1,9 +1,7 @@
 <%- include('./partials/header.ejs') %>
-    <h1>Track My Project: Show Project</h1>
+        <a href="/projects/<%= project.id %>/editProject">Edit Project</a>
+    </nav>
     <h2><%= project.projectName %></h2>
-    <form action="/projects/<%= project.id %>/editProject">
-        <input type="submit" value="Edit"/>
-    </form>
     <form action="/projects/<%= project.id %>?_method=DELETE" method="POST">
         <input type="submit" value="Delete"/>
     </form>
