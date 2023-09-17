@@ -2,6 +2,17 @@
         <a href="/projects/<%= project.id %>/editProject">Edit Project</a>
     </nav>
     <h2><%= project.projectName %></h2>
+    <p>
+        <strong>Category:</strong> <%= project.category %> </br>
+        <strong>Description:</strong> <%= project.description %> </br>
+        <strong>Budget:</strong> $<%= project.budget %> </br>
+        <strong>Estimated Cost:</strong> </br>
+        <strong>Actual Cost:</strong> </br>
+        <strong>Description:</strong> <%= project.description %> </br>
+    </p>
+    <div class="show-project-image">
+        <img src="<%= project.projectImg %>" alt="Image for the <%= project.projectName %> project." />
+    </div>
     <form action="/projects/<%= project.id %>?_method=DELETE" method="POST">
         <input type="submit" value="Delete"/>
     </form>
