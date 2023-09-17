@@ -45,8 +45,17 @@ router.get('/:id', async (req, res) => {
 // EDIT MATERIAL ROUTE -- render "editMaterial.ejs"
 
 // POST PROJECT ROUTE -- "create" new project
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
     console.log(req.body)
+    // res.send(req.body)
+    try {
+        const newProject = await Projects.create(req.body)
+        console.log(newProject)
+        res.redirect('/projects')
+    } catch (err) {
+        console.log(err)
+        res.status(500).send(err)
+    }
 })
 
 // POST MATERIAL ROUTE -- "create" new material
