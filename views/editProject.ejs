@@ -18,7 +18,9 @@
         <input type="text" value="<%= project.projectImg %>" id="project-image" name="projectImg"/>
     </br>
         <label for="project-complete">Complete:</label>
-        <input type="checkbox" id="project-complete" name="projectComplete"/>
+        <input type="checkbox" id="project-complete" name="projectComplete"
+            <%= project.projectComplete ? 'checked' : 'unchecked' %>
+        />
     </br>
         <input type="submit" value="Update Project"/>
     </form>

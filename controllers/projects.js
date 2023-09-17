@@ -55,6 +55,10 @@ router.get('/:id/edit', async (req, res) => {
 router.post('/', async (req, res) => {
     console.log(req.body)
     // res.send(req.body)
+
+    // set 'on/off' of checkbox to be boolean to match schema
+    req.body.projectComplete === 'on' ? req.body.projectComplete = true : req.body.projectComplete = false
+
     try {
         const newProject = await Projects.create(req.body)
         console.log(newProject)
