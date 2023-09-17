@@ -4,7 +4,9 @@
     <ul>
         <% for (let i = 0; i < projects.length; i++) { %>
             <li>
-                <%= projects[i].projectName %>
+                <a href="/projects/<%= projects[i].id %>">
+                    <%= projects[i].projectName %>
+                </a>
             </li>
         <% } %>
     </ul>

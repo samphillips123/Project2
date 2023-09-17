@@ -22,9 +22,13 @@ router.get('/', async (req, res) => {
 // NEW MATERIAL ROUTE -- render "newMaterial.ejs"
 
 // SHOW PROJECT ROUTE -- render "showProject.ejs"
-router.get('/:id', (req, res) => {
-    res.send('this is the show route')
-    // res.render('showProject.ejs')
+router.get('/:id', async (req, res) => {
+    // res.send('this is the show route')
+    // console.log(req.params.id)
+    const foundProject = await Projects.findById(req.params.id)
+    res.render('showProject.ejs', {
+        project: foundProject
+    })
 })
 
 // SHOW MATERIAL ROUTE -- render "showMaterial.ejs"
