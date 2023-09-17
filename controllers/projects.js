@@ -25,6 +25,9 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     // res.send('this is the show route')
     // console.log(req.params.id)
+
+    // Render "showProject.ejs" which will show details of the individual project and show list of the materials.
+    // Use database query to get project details.
     const foundProject = await Projects.findById(req.params.id)
     res.render('showProject.ejs', {
         project: foundProject
