@@ -6,9 +6,16 @@ const router = express.Router()
 const Projects = require('../models/projects')
 // const Materials = require('../models/materials')
 
-// INDEX ROUTE
-router.get('/', (req, res) => {
-    res.render('index.ejs')
+// INDEX ROUTE -- render "index.ejs"
+router.get('/', async (req, res) => {
+    // Render index.ejs to show list of projects
+    // Use database query to get the projects to use to show the list. 
+    const foundProjects = await Projects.find({})
+    console.log(foundProjects)
+    res.render('index.ejs', {
+        projects: foundProjects
+    })
+
 })
 
 // EXPORTS
