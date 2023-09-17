@@ -41,7 +41,7 @@ router.get('/:id', async (req, res) => {
 // SHOW MATERIAL ROUTE -- render "showMaterial.ejs"
 
 // EDIT PROJECT ROUTE -- render "editProject.ejs"
-router.get('/:id/edit', async (req, res) => {
+router.get('/:id/editProject', async (req, res) => {
     // res.send('route to edit project')
     const foundProject = await Projects.findById(req.params.id)
     res.render('editProject.ejs', {
