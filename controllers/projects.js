@@ -15,8 +15,31 @@ router.get('/', async (req, res) => {
     res.render('index.ejs', {
         projects: foundProjects
     })
-
 })
+
+// NEW PROJECT ROUTE -- render "newProject.ejs"
+
+// NEW MATERIAL ROUTE -- render "newMaterial.ejs"
+
+// SHOW PROJECT ROUTE -- render "showProject.ejs"
+
+// SHOW MATERIAL ROUTE -- render "showMaterial.ejs"
+
+// EDIT PROJECT ROUTE -- render "editProject.ejs"
+
+// EDIT MATERIAL ROUTE -- render "editMaterial.ejs"
+
+// POST PROJECT ROUTE -- "create" new project
+
+// POST MATERIAL ROUTE -- "create" new material
+
+// PUT PROJECT ROUTE -- "update" existing project
+
+// PUT MATERIAL ROUTE -- "update" existing material
+
+// DESTROY PROJECT ROUTE -- "delete" existing project
+
+// DESTROY MATERIAL ROUTE -- "delete" existing material
 
 // EXPORTS
 module.exports = router
