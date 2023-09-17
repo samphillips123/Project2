@@ -45,6 +45,9 @@ router.get('/:id', async (req, res) => {
 // EDIT MATERIAL ROUTE -- render "editMaterial.ejs"
 
 // POST PROJECT ROUTE -- "create" new project
+router.post('/', (req, res) => {
+    console.log(req.body)
+})
 
 // POST MATERIAL ROUTE -- "create" new material
 
