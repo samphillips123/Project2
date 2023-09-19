@@ -47,7 +47,8 @@ router.get('/:id/material/:index', async (req, res) => {
     // res.send(foundMaterial.materials[0])
     res.render('showMaterial.ejs', {
         project: foundProject,
-        materialIndex: req.params.index
+        materialIndex: req.params.index,
+        material: foundProject.materials[req.params.index]
     })
 })
 
