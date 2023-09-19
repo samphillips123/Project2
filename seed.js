@@ -14,7 +14,7 @@ mongoose.connect(mongoURI)
 Projects.create({
     projectName: 'Livingroom Renovation',
     category: 'Home',
-    description: 'Remodel livingroom - Remove old carpet and replace with tile. Reface fireplace with stucco. Replace wood panneling with drywall and paint to match Mexican Moderd theme.',
+    description: 'Remodel livingroom - Remove old carpet and replace with tile. Reface fireplace with stucco. Replace wood panneling with drywall and paint to match Mexican Modern theme.',
     projectComplete: false,
     budget: 3000,
     estCostTtl: 2089,

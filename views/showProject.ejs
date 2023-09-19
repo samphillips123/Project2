@@ -3,12 +3,12 @@
     </nav>
     <h2><%= project.projectName %></h2>
     <p>
-        <strong>Category:</strong> <%= project.category %> </br>
-        <strong>Description:</strong> <%= project.description %> </br>
-        <strong>Budget:</strong> $<%= project.budget %> </br>
-        <strong>Estimated Cost:</strong> </br>
-        <strong>Actual Cost:</strong> </br>
-        <strong>Description:</strong> <%= project.description %> </br>
+        <label class="project-data">Category:</label> <%= project.category %> </br>
+        <label class="project-data">Description:</label> <%= project.description %> </br>
+        <label class="project-data">Budget:</label> $<%= project.budget %> </br>
+        <label class="project-data">Estimated Cost:</label> </br>
+        <label class="project-data">Actual Cost:</label> </br>
+        <label class="project-data">Description:</label> <%= project.description %> </br>
     </p>
     <div class="show-project-image">
         <% console.log(project.projectImg) %>
