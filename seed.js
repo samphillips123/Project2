@@ -19,14 +19,14 @@ Projects.create({
     budget: 3000,
     estCostTtl: 2089,
     actCostTtl: 750,
-    projectImg: './imgs/livingroom_remodel.jpeg',
+    projectImg: '../imgs/livingroom_remodel.jpeg',
     materials: [{
             materialName: 'Large format tile',
             store: 'Jose Luis - friend of Chava',
             estCost: 750,
             actCost: 750,
             purchaseDate: '2022-05-17',
-            materialImg: './imgs/emser_tile.jpeg',
+            materialImg: '../imgs/emser_tile.jpeg',
             materialNotes: 'Emser tile, 20in x 20in. Cement grey.',
             materialComplete: false
         },
@@ -41,7 +41,7 @@ Projects.create({
             materialName: 'Electric Fireplace Insert',
             store: 'https://www.electricfireplacesdirect.com/',
             estCost: 839,
-            materialImg: './imgs/fireplace.jpeg',
+            materialImg: '../imgs/fireplace.jpeg',
             materialNotes: 'Electric fireplace to replace old wood burning fireplace.',
             materialComplete: false
         }
@@ -55,12 +55,12 @@ Projects.create({
     budget: 10000,
     estCostTtl: 7500,
     actCostTtl: 0,
-    projectImg: './imgs/bmw_wagon_project.jpeg',
+    projectImg: '../imgs/bmw_wagon_project.jpeg',
     materials: [{
             materialName: 'E30 BMW 3 Series Touring',
             store: 'TBD',
             estCost: 5000,
-            materialImg: './imgs/bmw_e30_touring.jpeg',
+            materialImg: '../imgs/bmw_e30_touring.jpeg',
             materialNotes: 'Need to have Richard help finding good condition wagon in Germany with his friend.',
             materialComplete: false
         },

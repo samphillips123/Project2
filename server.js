@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 3000
 // MIDDLEWARE
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
+app.use(express.static('public'))
 
 // setup database 
 const mongoose = require('mongoose')

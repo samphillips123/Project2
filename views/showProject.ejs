@@ -11,6 +11,7 @@
         <strong>Description:</strong> <%= project.description %> </br>
     </p>
     <div class="show-project-image">
+        <% console.log(project.projectImg) %>
         <img src="<%= project.projectImg %>" alt="Image for the <%= project.projectName %> project." />
     </div>
     <form action="/projects/<%= project.id %>?_method=DELETE" method="POST">
