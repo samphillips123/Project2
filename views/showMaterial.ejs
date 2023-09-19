@@ -1,21 +1,5 @@
 <%- include('./partials/header.ejs') %>
-        <!-- <a href="/projects/<%= project.id %>/editProject">Edit Project</a> -->
     </nav>
     <h2>Material Show Page</h2>
-    <!-- <h2><%= project.projectName %></h2> -->
-    <p>
-        <!-- <label class="project-data">Category:</label> <%= project.category %> </br>
-        <label class="project-data">Description:</label> <%= project.description %> </br>
-        <label class="project-data">Budget:</label> $<%= project.budget %> </br>
-        <label class="project-data">Estimated Cost:</label> </br>
-        <label class="project-data">Actual Cost:</label> </br>
-        <label class="project-data">Description:</label> <%= project.description %> </br> -->
-    </p>
-    <!-- <div class="show-project-image">
-        <% console.log(project.projectImg) %>
-        <img src="<%= project.projectImg %>" alt="Image for the <%= project.projectName %> project." />
-    </div> -->
-    <!-- <form action="/projects/<%= project.id %>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete"/>
-    </form> -->
+    <h2><%= project.materials[materialIndex].materialName %></h2>
 <%- include('./partials/footer.ejs') %>

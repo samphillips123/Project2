@@ -39,9 +39,16 @@ router.get('/:id', async (req, res) => {
 })
 
 // SHOW MATERIAL ROUTE -- render "showMaterial.ejs"
-router.get('/:id/material/:id', (req, res) => {
+router.get('/:id/material/:index', async (req, res) => {
     // res.send('material show page')
-    // console.log(req.params.id)
+    console.log(`id: ${req.params.id} index: ${req.params.index}`)
+    // console.log(Projects.findById(req.params.id))
+    const foundProject = await Projects.findById(req.params.id)
+    // res.send(foundMaterial.materials[0])
+    res.render('showMaterial.ejs', {
+        project: foundProject,
+        materialIndex: req.params.index
+    })
 })
 
 // EDIT PROJECT ROUTE -- render "editProject.ejs"
