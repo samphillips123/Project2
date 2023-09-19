@@ -39,6 +39,10 @@ router.get('/:id', async (req, res) => {
 })
 
 // SHOW MATERIAL ROUTE -- render "showMaterial.ejs"
+router.get('/:id/material/:id', (req, res) => {
+    // res.send('material show page')
+    // console.log(req.params.id)
+})
 
 // EDIT PROJECT ROUTE -- render "editProject.ejs"
 router.get('/:id/editProject', async (req, res) => {
