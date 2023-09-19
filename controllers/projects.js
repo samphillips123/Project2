@@ -62,9 +62,15 @@ router.get('/:id/editProject', async (req, res) => {
 })
 
 // EDIT MATERIAL ROUTE -- render "editMaterial.ejs"
-router.get('/:id/material/:index/editMaterial', (req, res) => {
-    res.send(`edit material route for index: ${req.params.index}`)
+router.get('/:id/material/:index/editMaterial', async (req, res) => {
+    // res.send(`edit material route for index: ${req.params.index}`)
     console.log(`edit material route for index: ${req.params.index}`)
+    const foundProject = await Projects.findById(req.params.id)
+    res.render('editMaterial.ejs', {
+        project: foundProject,
+        materialIndex: req.params.index,
+        material: foundProject.materials[req.params.index]
+    })
 }) 
 
 // POST PROJECT ROUTE -- "create" new project
