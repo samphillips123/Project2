@@ -41,7 +41,7 @@ router.get('/:id', async (req, res) => {
 // SHOW MATERIAL ROUTE -- render "showMaterial.ejs"
 router.get('/:id/material/:index', async (req, res) => {
     // res.send('material show page')
-    console.log(`id: ${req.params.id} index: ${req.params.index}`)
+    // console.log(`id: ${req.params.id} index: ${req.params.index}`)
     // console.log(Projects.findById(req.params.id))
     const foundProject = await Projects.findById(req.params.id)
     // res.send(foundMaterial.materials[0])
@@ -64,7 +64,7 @@ router.get('/:id/editProject', async (req, res) => {
 // EDIT MATERIAL ROUTE -- render "editMaterial.ejs"
 router.get('/:id/material/:index/editMaterial', async (req, res) => {
     // res.send(`edit material route for index: ${req.params.index}`)
-    console.log(`edit material route for index: ${req.params.index}`)
+    // console.log(`edit material route for index: ${req.params.index}`)
     const foundProject = await Projects.findById(req.params.id)
     res.render('editMaterial.ejs', {
         project: foundProject,
@@ -92,6 +92,22 @@ router.post('/', async (req, res) => {
 })
 
 // POST MATERIAL ROUTE -- "create" new material
+// router.post('/:id/material/:index', async (req, res) => {
+//     console.log(req.body)
+//     res.send(req.body)
+
+    // // set 'on/off' of checkbox to be boolean to match schema
+    // req.body.projectComplete === 'on' ? req.body.projectComplete = true : req.body.projectComplete = false
+
+    // try {
+    //     const newProject = await Projects.create(req.body)
+    //     console.log(newProject)
+    //     res.redirect('/projects')
+    // } catch (err) {
+    //     console.log(err)
+    //     res.status(500).send(err)
+    // }
+// })
 
 // PUT PROJECT ROUTE -- "update" existing project
 router.put('/:id', async (req, res) => {
@@ -108,6 +124,23 @@ router.put('/:id', async (req, res) => {
 })
 
 // PUT MATERIAL ROUTE -- "update" existing material
+router.put('/:id/material/:index', async (req, res) => {
+    // console.log(req.params.id)
+    // res.send(req.body)
+    try {
+        // set 'on/off' of checkbox to be boolean to match schema
+        req.body.materialComplete === 'on' ? req.body.materialComplete = true : req.body.materialComplete = false
+        const updatedMaterial = await Projects.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        const materialIndex = req.params.index
+        // res.send(req.body)
+        console.log(`updatedMaterial: ${updatedMaterial}`)
+        console.log(`req.body: ${req.body}`)
+        res.redirect(`/projects/${updatedMaterial.id}/material/${materialIndex}`)
+    } catch (err) {
+        console.log(err)
+        res.status(500).send(err)
+    }
+})
 
 // DESTROY PROJECT ROUTE -- "delete" existing project
 router.delete('/:id', async (req, res) => {

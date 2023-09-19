@@ -12,7 +12,6 @@
         <label class="material-data">Tracking #:</label> <%= material.trackingNum %> </br>
     </p>
     <div class="show-material-image">
-        <!-- <% console.log(project.projectImg) %> -->
         <img src="<%= material.materialImg %>" alt="Image for the <%= material.materialName %> material." />
     </div>
     <form action="/projects/<%= project.id %>?_method=DELETE" method="POST">
