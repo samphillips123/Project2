@@ -169,14 +169,18 @@ router.delete('/:id/material/:index', async (req, res) => {
     
     try {
         const foundProject = await Projects.findById(req.params.id)
-        const materialToDelete = await foundProject.materials[req.params.index].materialName
-        const materialID = await foundProject.materials[req.params.index]._id
-        console.log(materialToDelete)
-        console.log(foundProject.materials[req.params.index])
-        console.log(`material ID: ${materialID}`)
+        // const materialToDelete = await foundProject.materials[req.params.index].materialName
+        // const materialID = await foundProject.materials[req.params.index]._id
+        // console.log(materialToDelete)
+        const materialsArr = foundProject.materials
+        // console.log(foundProject.materials)
+        console.log(`Original Materials Array: ${materialsArr}`)
+        materialsArr.splice(req.params.index, 1)
+        console.log(`Updated Materials Array: ${materialsArr}`)
+        // console.log(`material ID: ${materialID}`)
         // const material = await Projects.findOneAndUpdate({ materialName: 'E30 BMW 3 Series Touring'}, {$pull: {materials: '0'}}, {new: true})
-        const material = await Projects.findByIdAndDelete(materialID)
-        console.log(`Deleted Material: ${material}`)
+        // const material = await Projects.findByIdAndDelete(materialID)
+        // console.log(`Deleted Material: ${material}`)
         res.redirect(`/projects/${req.params.id}`)
     } catch (err) {
         console.log(err)
