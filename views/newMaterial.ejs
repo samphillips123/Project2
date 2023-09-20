@@ -1,0 +1,38 @@
+<%- include('./partials/header.ejs') %>
+        <a href="/projects/<%= project.id %>/newMaterial">Add Material</a>
+        <a href="/projects/<%= project.id %>">Back to Project</a>
+    </nav>
+    <h2>New Material</h2>
+    <form action="/projects/<%= project.id %>?_method=POST" method="POST">
+        <label for="material-name">Name:</label>
+        <input type="text" placeholder="Material Name" id="material-name" name="materialName"/>
+    </br>
+        <label for="material-store">Store:</label>
+        <input type="text" placeholder="Store Name" id="material-store" name="store"/>
+    </br>
+        <label for="material-notes">Notes:</label>
+        <input type="text" placeholder="Material Notes" id="material-notes" name="materialNotes"/>
+    </br>
+        <label for="material-est-cost">Estimate Cost:</label>
+        <input type="number" placeholder="Estimate Cost" id="material-est-cost" name="estCost"/>
+    </br>
+        <label for="material-act-cost">Actual Cost:</label>
+        <input type="number" placeholder="Actual Cost" id="material-act-cost" name="actCost"/>
+    </br>
+        <label for="material-date">Purchase Date:</label>
+        <input type="text" placeholder="YYYY-MM-DD" id="material-date" name="purchaseDate"/>
+    </br>
+        <label for="material-tracking">Tracking #:</label>
+        <input type="text" placeholder="Tracking Number" id="material-tracking" name="trackingNum"/>
+    </br>
+        <label for="material-image">Image:</label>
+        <input type="text" placeholder="Image Path or URL" id="material-image" name="materialImg"/>
+    </br>
+        <label for="material-complete">Complete:</label>
+        <input type="checkbox" id="material-complete" name="materialComplete"
+            <%= project.projectComplete ? 'checked' : 'unchecked' %>
+        />
+    </br>
+        <input type="submit" value="Create Material"/>
+    </form>
+<%- include('./partials/footer.ejs') %>
