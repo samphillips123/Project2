@@ -20,7 +20,9 @@
     <ul class="materials-list">
         <% for (let i = 0; i < project.materials.length; i++) { %>
             <li>
-                <%= project.materials[i].materialName %>
+                <a href="/projects/<%= project.id %>/material/<%= i %>">
+                    <%= project.materials[i].materialName %>
+                </a>
             </li>
         <% } %>
     </ul>
