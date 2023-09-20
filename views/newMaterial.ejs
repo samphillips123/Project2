@@ -3,7 +3,7 @@
         <a href="/projects/<%= project.id %>">Back to Project</a>
     </nav>
     <h2>New Material</h2>
-    <form action="/projects/<%= project.id %>?_method=POST" method="POST">
+    <form action="/projects/<%= project.id %>" method="POST">
         <label for="material-name">Name:</label>
         <input type="text" placeholder="Material Name" id="material-name" name="materialName"/>
     </br>

@@ -163,6 +163,17 @@ router.delete('/:id', async (req, res) => {
 })
 
 // DESTROY MATERIAL ROUTE -- "delete" existing material
+router.delete('/:id/material/:index', async (req, res) => {
+    // console.log(req.params.id)
+    try {
+        const project = await Projects.findByIdAndDelete(req.params.id)
+        console.log(`Deleted project: ${project}`)
+        res.redirect('/projects')
+    } catch (err) {
+        console.log(err)
+        res.status(500).send(err)
+    }
+})
 
 // EXPORTS
 module.exports = router
