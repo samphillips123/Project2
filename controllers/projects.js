@@ -4,7 +4,6 @@ const router = express.Router()
 
 // MODELS
 const Projects = require('../models/projects')
-// const Materials = require('../models/materials')
 
 // INDEX ROUTE -- render "index.ejs"
 router.get('/', async (req, res) => {
@@ -138,12 +137,31 @@ router.put('/:id/material/:index', async (req, res) => {
     try {
         // set 'on/off' of checkbox to be boolean to match schema
         req.body.materialComplete === 'on' ? req.body.materialComplete = true : req.body.materialComplete = false
-        const updatedMaterial = await Projects.findByIdAndUpdate(req.params.id, req.body, {new: true})
-        const materialIndex = req.params.index
-        // res.send(req.body)
-        console.log(`updatedMaterial: ${updatedMaterial}`)
-        console.log(`req.body: ${req.body}`)
-        res.redirect(`/projects/${updatedMaterial.id}/material/${materialIndex}`)
+        // store variable with updated data for the material
+        const updatedMaterial = {
+            materialName: req.body.materialName,
+            store: req.body.store,
+            estCost: req.body.estCost,
+            actCost: req.body.actCost,
+            purchaseDate: req.body.purchaseDate,
+            trackingNum: req.body.trackingNum,
+            materialImg: req.body.materialImg,
+            materialNotes: req.body.materialNotes,
+            materialComplete: req.body.materialComplete
+        }
+        console.log(updatedMaterial)
+        // store project document in variable
+        const foundProject = await Projects.findById(req.params.id)
+        // store the materials array for that object in a variable
+        const materialsArr = foundProject.materials
+        console.log(`Original Materials Array: ${materialsArr}`)
+        // use .splice() to replace the specific element of the array that needs to be edited
+        materialsArr.splice(req.params.index, 1, updatedMaterial)
+        console.log(`Updated Materials Array: ${materialsArr}`)
+        // console.log(`Updated Material: ${updatedMaterial}`)
+        // update the materials array with the materialsArr variable that was modified with the .splice() method
+        const updatedProject = await Projects.findByIdAndUpdate(req.params.id, {materials: materialsArr}, {new: true})
+        res.redirect(`/projects/${req.params.id}/material/${req.params.index}`)
     } catch (err) {
         console.log(err)
         res.status(500).send(err)
