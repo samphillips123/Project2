@@ -4,8 +4,8 @@ const mongoose = require('mongoose')
 // .ENV ACCESS
 require('dotenv').config()
 
-// const mongoURI = process.env.MONGO_URI // mongodb atlas
-const mongoURI = "mongodb://127.0.0.1:27017/track_my_projects" // local mongodb
+const mongoURI = process.env.MONGO_URI // mongodb atlas
+// const mongoURI = "mongodb://127.0.0.1:27017/track_my_projects" // local mongodb
 const db = mongoose.connection
 
 // CONNECTION TO DB

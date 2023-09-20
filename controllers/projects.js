@@ -73,6 +73,7 @@ router.get('/:id/material/:index/editMaterial', async (req, res) => {
     // res.send(`edit material route for index: ${req.params.index}`)
     // console.log(`edit material route for index: ${req.params.index}`)
     const foundProject = await Projects.findById(req.params.id)
+    console.log(foundProject.materials[req.params.index])
     res.render('editMaterial.ejs', {
         project: foundProject,
         materialIndex: req.params.index,
@@ -164,11 +165,13 @@ router.delete('/:id', async (req, res) => {
 
 // DESTROY MATERIAL ROUTE -- "delete" existing material
 router.delete('/:id/material/:index', async (req, res) => {
-    // console.log(req.params.id)
+    // console.log(req.body.projectName)
+    
     try {
-        const project = await Projects.findByIdAndDelete(req.params.id)
-        console.log(`Deleted project: ${project}`)
-        res.redirect('/projects')
+        const foundProject = await Projects.findById(req.params.id)
+        const material = await Projects.findOneAndDelete(foundProject.materials[req.params.index])
+        console.log(`Deleted Material: ${material}`)
+        res.redirect('/projects/:id')
     } catch (err) {
         console.log(err)
         res.status(500).send(err)
