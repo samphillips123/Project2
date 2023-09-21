@@ -99,22 +99,41 @@ router.post('/', async (req, res) => {
 })
 
 // POST MATERIAL ROUTE -- "create" new material
-// router.post('/:id/material/:index', async (req, res) => {
-//     console.log(req.body)
-//     res.send(req.body)
-
-    // // set 'on/off' of checkbox to be boolean to match schema
-    // req.body.projectComplete === 'on' ? req.body.projectComplete = true : req.body.projectComplete = false
-
-    // try {
-    //     const newProject = await Projects.create(req.body)
-    //     console.log(newProject)
-    //     res.redirect('/projects')
-    // } catch (err) {
-    //     console.log(err)
-    //     res.status(500).send(err)
-    // }
-// })
+router.post('/:id', async (req, res) => {
+    // console.log(req.params.id)
+    try {
+        // set 'on/off' of checkbox to be boolean to match schema
+        req.body.materialComplete === 'on' ? req.body.materialComplete = true : req.body.materialComplete = false
+        // store variable with updated data for the material
+        const newMaterial = {
+            materialName: req.body.materialName,
+            store: req.body.store,
+            estCost: req.body.estCost,
+            actCost: req.body.actCost,
+            purchaseDate: req.body.purchaseDate,
+            trackingNum: req.body.trackingNum,
+            materialImg: req.body.materialImg,
+            materialNotes: req.body.materialNotes,
+            materialComplete: req.body.materialComplete
+        }
+        console.log(newMaterial)
+        // store project document in variable
+        const foundProject = await Projects.findById(req.params.id)
+        // store the materials array for that object in a variable
+        const materialsArr = foundProject.materials
+        console.log(`Original Materials Array: ${materialsArr}`)
+        // use .push() to add the new element to the end of the array
+        materialsArr.push(newMaterial)
+        console.log(`Updated Materials Array: ${materialsArr}`)
+        // console.log(`New Material: ${newMaterial}`)
+        // update the materials array with the materialsArr variable that was modified with the .push() method
+        const updatedProject = await Projects.findByIdAndUpdate(req.params.id, {materials: materialsArr}, {new: true})
+        res.redirect(`/projects/${req.params.id}`)
+    } catch (err) {
+        console.log(err)
+        res.status(500).send(err)
+    }
+})
 
 // PUT PROJECT ROUTE -- "update" existing project
 router.put('/:id', async (req, res) => {
@@ -133,7 +152,6 @@ router.put('/:id', async (req, res) => {
 // PUT MATERIAL ROUTE -- "update" existing material
 router.put('/:id/material/:index', async (req, res) => {
     // console.log(req.params.id)
-    // res.send(req.body)
     try {
         // set 'on/off' of checkbox to be boolean to match schema
         req.body.materialComplete === 'on' ? req.body.materialComplete = true : req.body.materialComplete = false
