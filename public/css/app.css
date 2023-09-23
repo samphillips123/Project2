@@ -1,10 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Rowdies&family=Tenor+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 body {
-    font-family: 'Tenor Sans', 'Arial';
+    font-family: 'Saira Extra Condensed', 'Arial';
+    font-weight: 300;
+    font-size: 1.25rem;
 }
 
 h1 {
-    font-family: 'Rowdies','Arial';
+    font-weight: 700;
+    font-size: 3rem;
 }
 
+h2 {
+    font-weight: 600;
+    font-size: 2.25rem;
+}
+
+nav {
+    font-weight: 400;
+}
+
+label {
+    font-weight: 600;
+}
