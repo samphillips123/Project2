@@ -4,21 +4,22 @@
         <a class="nav-link" href="/projects/<%= project.id %>">Back to Project</a>
     </nav>
     <h2><%= project.projectName %>: <%= material.materialName %> <%- material.materialComplete === true ? ' - Complete' : '' %></h2>
-    <div class="show-details">
-        <p>
-            <label class="material-data">Store:</label> <%= material.store %> </br>
-            <label class="material-data">Notes:</label> <%= material.materialNotes %> </br>
-            <label class="material-data">Estimated Cost:</label> $<%= material.estCost %> </br>
-            <label class="material-data">Actual Cost:</label> <%= material.actCost %> </br>
-            <label class="material-data">Purchase Date:</label> <%= material.purchaseDate %> </br>
-            <label class="material-data">Tracking #:</label> <%= material.trackingNum %> </br>
-        </p>
+    <div class="container">
+        <div class="show-details">
+            <p>
+                <label class="material-data">Store:</label> <%= material.store %> </br>
+                <label class="material-data">Notes:</label> <%= material.materialNotes %> </br>
+                <label class="material-data">Estimated Cost:</label> $<%= material.estCost %> </br>
+                <label class="material-data">Actual Cost:</label> <%= material.actCost %> </br>
+                <label class="material-data">Purchase Date:</label> <%= material.purchaseDate %> </br>
+                <label class="material-data">Tracking #:</label> <%= material.trackingNum %> </br>
+            </p>
+            <form action="/projects/<%= project.id %>/material/<%= materialIndex %>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete"/>
+            </form>
+        </div>
+        <div class="show-image">
+            <img <%- material.materialImg === '' ? 'hidden' : '' %> src="<%= material.materialImg %>" alt="Image for the <%= material.materialName %> material." />
+        </div>
     </div>
-    <form action="/projects/<%= project.id %>/material/<%= materialIndex %>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete"/>
-    </form>
-    <div class="show-image">
-        <img <%- material.materialImg === '' ? 'hidden' : '' %> src="<%= material.materialImg %>" alt="Image for the <%= material.materialName %> material." />
-    </div>
-
 <%- include('./partials/footer.ejs') %>

@@ -29,6 +29,11 @@ nav {
     padding: 0 10px;
 }
 
+.container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
 label {
     font-weight: 600;
 }
@@ -60,6 +65,10 @@ a {
 
 a:hover {
     font-weight: bolder;
+}
+
+img {
+    width: 40vw;
 }
 
 small {
