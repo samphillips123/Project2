@@ -4,20 +4,25 @@ body {
     font-family: 'Saira Extra Condensed', 'Arial';
     font-weight: 300;
     font-size: 1.25rem;
+    background-color: #D9CDA0;
 }
 
 h1 {
     font-weight: 700;
     font-size: 3rem;
+    margin: 0 20px;
 }
 
 h2 {
     font-weight: 600;
     font-size: 2.25rem;
+    margin: 0 20px;
 }
 
 nav {
     font-weight: 400;
+    background: linear-gradient(to right, #867171, #D9CDA0);
+    width: 100vw;
 }
 
 .nav-link {
@@ -26,6 +31,20 @@ nav {
 
 label {
     font-weight: 600;
+}
+
+input {
+    background-color: #e2ded1;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+input[type=submit] {
+    font-weight: 600;
+}
+
+input[type=submit]:hover {
+    box-shadow: 1px 1px 1px;
 }
 
 li {
