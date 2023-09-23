@@ -74,7 +74,7 @@ As a user, I need to be able to delete a project.
 - Use EJS partials for ease of creation of the many .ejs files.
 - Deployed and working without bugs on Heroku.
 
-### Stretch Goals
+### Stretch Goals for V 1.0
 - Allow a user to log in to the app so that they only see their specific projects.
 - Have a thoughtfully styled app using a CSS framework.
 - Allow the user to access a settings page where they can pre-fill or modify dropdown options. This would remove the need for stings and allow for data consistency across the app. 
@@ -82,9 +82,10 @@ As a user, I need to be able to delete a project.
 
 
 ### Next Steps
-- Finish cleaning up CSS design
-- Add login functionality
+- Finish cleaning up CSS design.
+- Make the app user friendly on different sized devices.
+- Add login functionality.
 - Add calculations with fields related to cost and budgeting. 
-- Fix date formating
-- Update sorting of projects and materials
+- Fix date formating.
+- Update sorting of projects and materials.
 - Update to a one-to-many relationship for models instead of a single model.

@@ -74,7 +74,7 @@ Projects.create({
         {
             materialName: 'Motegi Wheels',
             store: 'https://www.motegiracing.com/',
-            estCost: 100,
+            estCost: 1000,
             materialNotes: 'Not sure of style. At the moment, prefer bronze finish.',
             materialComplete: false,
             materialImg: '/imgs/motegi_wheels.jpeg'
