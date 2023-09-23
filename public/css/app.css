@@ -34,6 +34,15 @@ nav {
     grid-template-columns: 50% 50%;
 }
 
+.show-details {
+    margin: 20px;
+    padding: 10px;
+}
+
+.show-image {
+    margin: 20px;
+}
+
 label {
     font-weight: 600;
 }
@@ -51,7 +60,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    box-shadow: 1px 1px 1px;
+    box-shadow: 0 1px 1px;
 }
 
 li {
@@ -69,6 +78,9 @@ a:hover {
 
 img {
     width: 40vw;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 3px 3px;
 }
 
 small {
