@@ -30,7 +30,7 @@ const projectSchema = new mongoose.Schema ({
         actCost: Number,
         purchaseDate: {type: Date, min: '2000-01-01'},
         trackingNum: String,
-        materialImg: String,
+        materialImg: {type: String, default: ''},
         materialNotes: String,
         materialComplete: Boolean
     }]

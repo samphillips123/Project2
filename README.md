@@ -1,9 +1,15 @@
 # Track_My_Project
 
+## V 1.0 completed September 23, 2023
+
+## Heroku live link: https://aqueous-caverns-50524-b73058e11ebb.herokuapp.com/projects
+
 ## Project Description
 > General App Idea/Purpose:<br />
 
 Keep track of your projects' goals, timelines, materials, and cost, so that you can be on track for success! You will be able to track different types of projects, such as: home remodels, gardening, building your dream bike, restoring a car, etc. 
+
+Project will use express, ejs, mongoose, mongodb. Hosted with Heroku and mongoDB atlas for database. 
 
 > Models:<br />
 
@@ -73,3 +79,12 @@ As a user, I need to be able to delete a project.
 - Have a thoughtfully styled app using a CSS framework.
 - Allow the user to access a settings page where they can pre-fill or modify dropdown options. This would remove the need for stings and allow for data consistency across the app. 
 - Allow easy usability on different devices (mobile, tablet, desktop)
+
+
+### Next Steps
+- Finish cleaning up CSS design
+- Add login functionality
+- Add calculations with fields related to cost and budgeting. 
+- Fix date formating
+- Update sorting of projects and materials
+- Update to a one-to-many relationship for models instead of a single model.
