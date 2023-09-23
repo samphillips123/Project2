@@ -111,7 +111,7 @@ Projects.create({
         },
         {
             materialName: 'Landscape Design',
-            store: 'Either do it ourselves or higher a designer',
+            store: 'Either do it ourselves or hire a designer',
             estCost: 150,
             materialNotes: 'Map out and plan the layout of the landscaping.',
             materialComplete: false,
