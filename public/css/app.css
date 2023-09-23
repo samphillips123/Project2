@@ -1,3 +1,10 @@
-* {
-    background-color: maroon;
+@import url('https://fonts.googleapis.com/css2?family=Rowdies&family=Tenor+Sans&display=swap');
+
+body {
+    font-family: 'Tenor Sans', 'Arial';
 }
+
+h1 {
+    font-family: 'Rowdies','Arial';
+}
+
