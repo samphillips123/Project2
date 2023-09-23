@@ -2,7 +2,7 @@
         <a href="/projects/<%= project.id %>/editProject">Edit Project</a>
         <a href="/projects/<%= project.id %>/newMaterial">Add Material</a>
     </nav>
-    <h2><%= project.projectName %></h2>
+    <h2><%= project.projectName %> <%- project.projectComplete === true ? ' - Complete' : '' %></h2>
     <p>
         <label class="project-data">Category:</label> <%= project.category %> </br>
         <label class="project-data">Description:</label> <%= project.description %> </br>
@@ -21,6 +21,7 @@
                 <a href="/projects/<%= project.id %>/material/<%= i %>">
                     <%= project.materials[i].materialName %>
                 </a>
+                <%- project.materials[i].materialComplete === true ? ' - Complete' : '' %>
             </li>
         <% } %>
     </ul>
