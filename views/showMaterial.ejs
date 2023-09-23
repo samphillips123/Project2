@@ -14,7 +14,7 @@
         <label class="material-data">Tracking #:</label> <%= material.trackingNum %> </br>
     </p>
     <div class="show-material-image">
-        <img src="<%= material.materialImg %>" alt="Image for the <%= material.materialName %> material." />
+        <img <%- material.materialImg === '' ? 'hidden' : '' %> src="<%= material.materialImg %>" alt="Image for the <%= material.materialName %> material." />
     </div>
     <form action="/projects/<%= project.id %>/material/<%= materialIndex %>?_method=DELETE" method="POST">
         <input type="submit" value="Delete"/>

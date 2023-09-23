@@ -13,7 +13,8 @@
     </p>
     <div class="show-project-image">
         <!-- <% console.log(project.projectImg) %> -->
-        <img src="<%= project.projectImg %>" alt="Image for the <%= project.projectName %> project." />
+        <img 
+        <%- project.projectImg === '' ? 'hidden' : '' %> src="<%= project.projectImg %>" alt="Image for the <%= project.projectName %> project." />
     </div>
     <ul class="materials-list">
         <% for (let i = 0; i < project.materials.length; i++) { %>
