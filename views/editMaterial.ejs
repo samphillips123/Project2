@@ -1,6 +1,6 @@
 <%- include('./partials/header.ejs') %>
-        <a href="/projects/<%= project.id %>/newMaterial">Add Material</a>
-        <a href="/projects/<%= project.id %>/material/<%= materialIndex %>">Back</a>
+        <a class="nav-link" href="/projects/<%= project.id %>/newMaterial">Add Material</a>
+        <a class="nav-link" href="/projects/<%= project.id %>/material/<%= materialIndex %>">Back</a>
     </nav>
     <h2>Edit Material</h2>
     <form action="/projects/<%= project.id %>/material/<%= materialIndex %>?_method=PUT" method="POST">

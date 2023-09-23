@@ -1,6 +1,6 @@
 <%- include('./partials/header.ejs') %>
-        <a href="/projects/<%= project.id %>/editProject">Edit Project</a>
-        <a href="/projects/<%= project.id %>/newMaterial">Add Material</a>
+        <a class="nav-link" href="/projects/<%= project.id %>/editProject">Edit Project</a>
+        <a class="nav-link" href="/projects/<%= project.id %>/newMaterial">Add Material</a>
     </nav>
     <h2><%= project.projectName %> <%- project.projectComplete === true ? ' - Complete' : '' %></h2>
     <p>

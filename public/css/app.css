@@ -20,6 +20,10 @@ nav {
     font-weight: 400;
 }
 
+.nav-link {
+    padding: 0 10px;
+}
+
 label {
     font-weight: 600;
 }

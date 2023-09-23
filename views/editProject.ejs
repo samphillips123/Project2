@@ -1,5 +1,5 @@
 <%- include('./partials/header.ejs') %>
-        <a href="/projects/<%= project.id %>">Back to Project</a>
+        <a class="nav-link" href="/projects/<%= project.id %>">Back to Project</a>
     </nav>
     <h2>Edit Project</h2>
     <form action="/projects/<%= project.id %>?_method=PUT" method="POST">
